@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --park-blue: #0A3963;
+  --park-blue-hover: #082D4F;
+  --park-green: #8CC63F;
+  --park-green-hover: #7AB62F;
+  --park-bg-light: #F8FAFC;
+  --park-card-bg: #FFFFFF;
+  --park-border: #E2E8F0;
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: #F8FAFC;
+  color: #0A3963;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8CC63F;
+}
+
+/* Crisp Light Cards */
+.park-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 1px 3px 0 rgba(10, 57, 99, 0.05), 0 1px 2px -1px rgba(10, 57, 99, 0.05);
+  transition: all 0.2s ease-in-out;
+}
+
+.park-card-hover:hover {
+  border-color: rgba(140, 198, 63, 0.6);
+  box-shadow: 0 10px 25px -5px rgba(10, 57, 99, 0.08), 0 8px 10px -6px rgba(10, 57, 99, 0.04);
+  transform: translateY(-2px);
+}
+
+/* Green Gradient Buttons */
+.btn-park-green {
+  background: linear-gradient(135deg, #8CC63F 0%, #7AB62F 100%);
+  color: #FFFFFF;
+  font-weight: 800;
+  transition: all 0.2s ease;
+}
+
+.btn-park-green:hover {
+  background: linear-gradient(135deg, #9BD64F 0%, #8CC63F 100%);
+  box-shadow: 0 4px 14px rgba(140, 198, 63, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Blue Buttons */
+.btn-park-blue {
+  background: #0A3963;
+  color: #FFFFFF;
+  font-weight: 700;
+  border: 1px solid #0A3963;
+  transition: all 0.2s ease;
+}
+
+.btn-park-blue:hover {
+  background: #082D4F;
+  box-shadow: 0 4px 14px rgba(10, 57, 99, 0.25);
+  transform: translateY(-1px);
+}
+
+/* Badges for Light Mode */
+.badge-urgent {
+  background: #FEF2F2;
+  color: #DC2626;
+  border: 1px solid #FCA5A5;
+}
+
+.badge-high {
+  background: #FFEDD5;
+  color: #EA580C;
+  border: 1px solid #FDBA74;
+}
+
+.badge-medium {
+  background: #FEF3C7;
+  color: #D97706;
+  border: 1px solid #FCD34D;
+}
+
+.badge-low {
+  background: #EFF6FF;
+  color: #2563EB;
+  border: 1px solid #93C5FD;
+}
+
+.badge-completed {
+  background: #F0FDF4;
+  color: #166534;
+  border: 1px solid #86EFAC;
+}
+
+.badge-in-progress {
+  background: #F3E8FF;
+  color: #9333EA;
+  border: 1px solid #D8B4FE;
+}
+
+.badge-open {
+  background: #F0F9FF;
+  color: #0284C7;
+  border: 1px solid #7DD3FC;
+}
+
+/* Signature Canvas styling */
+.signature-canvas {
+  background-color: #FFFFFF;
+  border: 2px dashed #CBD5E1;
+  border-radius: 8px;
+  cursor: crosshair;
+}
