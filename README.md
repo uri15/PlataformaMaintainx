@@ -1,4 +1,4 @@
-# PLATAFORMA PARK CMMS 🏭⚡
+# PLATAFORMA PARK CMMS
 
 [![React 19](https://img.shields.io/badge/React-19.3.0-61DAFB?logo=react&logoColor=black)](https://react.dev/)
 [![Node.js](https://img.shields.io/badge/Node.js-18+-339933?logo=nodedotjs&logoColor=white)](https://nodejs.org/)
@@ -8,42 +8,42 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![jsPDF](https://img.shields.io/badge/jsPDF-Reports-E71D32)](https://github.com/parallax/jsPDF)
 
-Sistema Computarizado de Gestión de Mantenimiento (**CMMS**) integral, modular y en tiempo real, diseñado para la administración operativa de infraestructura, parques industriales y naves de manufactura. 
+Sistema Computarizado de Gestión de Mantenimiento (**CMMS**) integral, modular y en tiempo real, diseñado para la administración operativa de infraestructura, parques industriales y naves de manufactura.
 
 El proyecto adopta los estándares de experiencia de usuario y arquitectura de plataformas de clase mundial como **MaintainX**, complementado con sincronización bidireccional por WebSockets, bitácora de auditoría inmutable, emisión de reportes técnicos oficiales en PDF y control de acceso basado en roles (**RBAC**).
 
 ---
 
-## 🚀 Características Principales
+## Características Principales
 
-### 1. Panel de Control & KPIs Industriales (Dashboard)
+### 1. Panel de Control y Métricas Operativas (Dashboard)
 * **Indicadores Clave de Mantenimiento:** Cálculo automático en tiempo real de métricas críticas como **MTTR** (*Mean Time to Repair*), **MTBF** (*Mean Time Between Failures*), tasa de cumplimiento preventivo y tiempo de inactividad acumulado.
 * **Alertas Operativas:** Notificaciones visuales de órdenes vencidas, equipos críticos fuera de servicio e inventario bajo stock mínimo de seguridad.
-* **Estado de Conexión en Vivo:** Indicador dinámico de presencia y latencia del socket en el encabezado.
+* **Estado de Conexión:** Indicador dinámico de presencia y latencia del socket en el encabezado.
 
-### 2. Módulo de Órdenes de Trabajo & Modo Borrador (Work Orders)
-* **Captura Flexible:** Soporte para intervenciones con o sin costo, equipos registrados o manuales, y asignación ágil de técnicos.
+### 2. Módulo de Órdenes de Trabajo y Modo Borrador (Work Orders)
+* **Captura Flexible:** Soporte para intervenciones con o sin costo, equipos registrados o manuales, y asignación de técnicos.
 * **Aislamiento Seguro de Borradores (*Draft State*):** Modificar datos o eliminar evidencias fotográficas se mantiene en memoria local; los cambios solo impactan la base de datos central al presionar explícitamente **"Guardar Orden"**.
 * **Evidencias Fotográficas Comprimidas:** Subida de imágenes con compresión en cliente (*Canvas API*), clasificación por etapas (*Antes*, *Durante*, *Después*, *Evidencia*), prevención global de arrastre fuera del contenedor y visor en alta definición (*Lightbox*).
-* **Bitácora & Chat en Tiempo Real:** Chat colaborativo por orden para notas técnicas y adjuntos multimedia con soporte de sockets y aviso de "escribiendo...".
+* **Bitácora y Chat en Tiempo Real:** Chat colaborativo por orden para notas técnicas y adjuntos multimedia con soporte de sockets y aviso de "escribiendo...".
 
 ### 3. Reportes Oficiales en PDF (Engine jsPDF)
 * **Membrete Corporativo:** Diseño formal adaptado a la identidad de Plataforma PARK con folio institucional y dirección física fijada.
-* **Desglose de Costos & Procedimientos:** Tablas dinámicas de mano de obra, repuestos utilizados y checklist de tareas con sello de tiempo.
-* **Cuadrícula Fotográfica Inteligente:** Distribución compacta de evidencias fotográficas en 3 columnas con cálculo dinámico de saltos de página y firmas de conformidad operativa.
+* **Desglose de Costos y Procedimientos:** Tablas dinámicas de mano de obra, repuestos utilizados y checklist de tareas con sello de tiempo.
+* **Cuadrícula Fotográfica:** Distribución compacta de evidencias fotográficas en 3 columnas con cálculo dinámico de saltos de página y firmas de conformidad operativa.
 
 ### 4. Bitácora de Auditoría y Trazabilidad (Audit Trail)
 * **Registro de Eventos Críticos:** Monitoreo exhaustivo de aperturas, cierres de órdenes, modificaciones de stock, intentos de login y cambios de contraseña.
-* **Filtros Avanzados & Severidad:** Clasificación por niveles (*Éxito*, *Info*, *Advertencia*, *Crítico*) y exportación inmediata a formato **CSV** y **JSON**.
+* **Filtros Avanzados y Severidad:** Clasificación por niveles (*Éxito*, *Info*, *Advertencia*, *Crítico*) y exportación inmediata a formato **CSV** y **JSON**.
 
-### 5. Control de Activos, Repuestos & Mantenimiento Preventivo
+### 5. Control de Activos, Repuestos y Mantenimiento Preventivo
 * **Catálogo de Activos:** Mapeo de equipos por nave industrial, estado operativo (*Operativo*, *En Falla*, *Mantenimiento*) y criticidad.
 * **Gestión de Inventario:** Control de existencias, costos unitarios, movimientos de almacén y deducción automática al completar órdenes.
 * **Planes Preventivos Calendarizados:** Generación automática de órdenes de trabajo recurrentes según frecuencia programada.
 
 ---
 
-## 🛠️ Stack Tecnológico
+## Stack Tecnológico
 
 | Capa | Tecnologías |
 | :--- | :--- |
@@ -56,7 +56,7 @@ El proyecto adopta los estándares de experiencia de usuario y arquitectura de p
 
 ---
 
-## 📦 Instalación y Puesta en Marcha
+## Instalación y Puesta en Marcha
 
 ### Prerrequisitos
 * **Node.js** (versión 18.0.0 o superior recomendada)
@@ -99,7 +99,7 @@ El proyecto adopta los estándares de experiencia de usuario y arquitectura de p
 
 ---
 
-## 👥 Cuentas de Acceso Demo (Preconfiguradas)
+## Cuentas de Acceso Demo
 
 Para probar la plataforma con diferentes privilegios y perfiles del sistema RBAC, puedes ingresar con cualquiera de las siguientes credenciales:
 
@@ -111,7 +111,7 @@ Para probar la plataforma con diferentes privilegios y perfiles del sistema RBAC
 
 ---
 
-## 📁 Estructura del Repositorio
+## Estructura del Repositorio
 
 ```text
 PlataformaMaintainx/
@@ -139,7 +139,7 @@ PlataformaMaintainx/
 
 ---
 
-## 👨‍💻 Autor
+## Autor
 
 **Mario Uriel Beltrán Alvarado**  
 *Ingeniería en Ciencias de la Computación*  
