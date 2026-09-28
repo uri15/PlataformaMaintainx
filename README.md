@@ -97,6 +97,22 @@ El proyecto adopta los estándares de experiencia de usuario y arquitectura de p
 
 > **Nota de Base de Datos:** El servidor incluye auto-inicialización. Si el archivo local `cmms_db.json` no existe, se generará automáticamente a partir de la plantilla limpia `src/data/cmms_db.example.json`.
 
+### Despliegue con Docker (Opcional)
+
+Si prefieres ejecutar el sistema contenedorizado con Docker y Docker Compose:
+
+1. **Construir y levantar el contenedor:**
+   ```bash
+   docker compose up -d --build
+   ```
+
+2. **Detener el contenedor:**
+   ```bash
+   docker compose down
+   ```
+
+*(Los volúmenes `cmms_uploads` y `cmms_data` conservan las imágenes y la base de datos de forma persistente fuera del contenedor)*.
+
 ---
 
 ## Cuentas de Acceso Demo

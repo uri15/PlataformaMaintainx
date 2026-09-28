@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  cmms-app:
+    build: .
+    container_name: plataforma-park-cmms
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - NODE_ENV=production
+      - PORT=8000
+      - JWT_SECRET=cmms_park_super_secret_jwt_key_2026_plataformapark_platform
+    volumes:
+      # Volúmenes persistentes para no perder fotos ni datos de la BD al reiniciar
+      - cmms_uploads:/app/uploads
+      - cmms_data:/app/src/data
+
+volumes:
+  cmms_uploads:
+    driver: local
+  cmms_data:
+    driver: local
