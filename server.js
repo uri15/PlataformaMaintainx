@@ -239,10 +239,7 @@ function getDbData() {
       const raw = fs.readFileSync(dbFilePath, 'utf8');
       const data = JSON.parse(raw);
       if (!Array.isArray(data.passwordResetRequests)) data.passwordResetRequests = [];
-      if (!Array.isArray(data.auditLogs) || data.auditLogs.length === 0) {
-        data.auditLogs = getSeedAuditLogs();
-        saveDbData(data);
-      }
+      if (!Array.isArray(data.auditLogs)) data.auditLogs = [];
       return data;
     }
   } catch (err) {
