@@ -1,13 +1,13 @@
 export const initialData = {
   company: {
-    name: "GRUPO FAVIER",
+    name: "PLATAFORMAPARK",
     platform: "PLATAFORMA PARK CMMS",
     subtitle: "Sistema de Mantenimiento de Infraestructura & Parques Industriales",
     logoText: "PARK",
-    groupText: "GRUPO FAVIER",
-    contactEmail: "mantenimiento@grupofavier.com",
+    groupText: "PLATAFORMAPARK",
+    contactEmail: "mantenimiento@plataformapark.com",
     phone: "+52 (33) 3800-PARK",
-    address: "Av. Paseo Royal #500, Corporativo Grupo Favier"
+    address: "Av. Paseo Royal #500, Corporativo PlataformaPark"
   },
   assets: [
     {
@@ -154,7 +154,31 @@ export const initialData = {
       totalLaborCost: 180.00,
       grandTotal: 337.00,
       technicianNotes: "Mantenimiento realizado satisfactoriamente. Se detectó ligera sobretemperatura en fase B antes del torqueo, resuelto al ajustar tornillo suelto. Parámetros normales.",
-      signatureData: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='60'><path d='M 10 40 Q 30 10 60 40 T 120 30 T 180 50' stroke='%23D4AF37' stroke-width='3' fill='none'/><text x='10' y='55' fill='%2394A3B8' font-size='10'>Firma: C. Mendoza</text></svg>"
+      signatureData: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='60'><path d='M 10 40 Q 30 10 60 40 T 120 30 T 180 50' stroke='%238CC63F' stroke-width='3' fill='none'/><text x='10' y='55' fill='%2394A3B8' font-size='10'>Firma: C. Mendoza</text></svg>",
+      comments: [
+        {
+          id: "cmt-1",
+          userId: "u-admin-001",
+          userName: "Ing. Carlos Mendoza",
+          userRole: "admin",
+          roleBadge: "bg-blue-100 text-blue-800",
+          avatarColor: "bg-[#0A3963]",
+          timestamp: "2026-07-19 09:10",
+          text: "Iniciando labores en subestación. Candados LOTO colocados.",
+          type: "comment"
+        },
+        {
+          id: "cmt-2",
+          userId: "u-admin-001",
+          userName: "Ing. Carlos Mendoza",
+          userRole: "admin",
+          roleBadge: "bg-blue-100 text-blue-800",
+          avatarColor: "bg-[#0A3963]",
+          timestamp: "2026-07-19 14:25",
+          text: "Inspección completada con éxito. Equipo en servicio normal.",
+          type: "comment"
+        }
+      ]
     },
     {
       id: "WO-8042",
@@ -190,7 +214,20 @@ export const initialData = {
       totalLaborCost: 250.00,
       grandTotal: 615.00,
       technicianNotes: "Filtros colocados. Avance del 60%. Mañana se concluye lubricación de chumaceras.",
-      signatureData: null
+      signatureData: null,
+      comments: [
+        {
+          id: "cmt-3",
+          userId: "u-auditor-005",
+          userName: "Téc. Roberto Gómez",
+          userRole: "tecnico",
+          roleBadge: "bg-emerald-100 text-emerald-800",
+          avatarColor: "bg-emerald-600",
+          timestamp: "2026-07-28 10:20",
+          text: "Filtros reemplazados con éxito. Presiones de refrigerante en rango estándar.",
+          type: "comment"
+        }
+      ]
     },
     {
       id: "WO-8043",
@@ -204,7 +241,8 @@ export const initialData = {
       assetName: "Elevador Panorámico de Pasajeros #02",
       development: "Park Royal Residencial",
       location: "Torre 1 - Piso 8",
-      assignedTech: "Ing. Alejandro Silva",
+      assignedTech: "Téc. Juan Pérez",
+      assignedTechEmail: "tecnico@park.com",
       assignedTechRole: "Especialista Elevación Otis",
       createdDate: "2026-07-29T08:15:00",
       dueDate: "2026-07-29T14:00:00",
@@ -224,7 +262,8 @@ export const initialData = {
       totalLaborCost: 160.00,
       grandTotal: 245.00,
       technicianNotes: "Atención inmediata requerida. Refacción en ruta con el técnico.",
-      signatureData: null
+      signatureData: null,
+      comments: []
     },
     {
       id: "WO-8044",
@@ -256,7 +295,8 @@ export const initialData = {
       totalLaborCost: 100.00,
       grandTotal: 100.00,
       technicianNotes: "Programado para viernes a mediodía.",
-      signatureData: null
+      signatureData: null,
+      comments: []
     },
     {
       id: "WO-8045",
@@ -287,7 +327,43 @@ export const initialData = {
       totalLaborCost: 200.00,
       grandTotal: 200.00,
       technicianNotes: "En espera de llegada de manómetro digital de calibración externa.",
-      signatureData: null
+      signatureData: null,
+      comments: []
+    },
+    {
+      id: "WO-8046",
+      code: "WO-8046",
+      title: "Inspección y Ajuste de Portón Automatizado Acceso Sur",
+      description: "Revisar fotoceldas de seguridad, engrasar cremallera y verificar embrague de seguridad de portón industrial FAAC.",
+      priority: "Alta",
+      status: "Abierta",
+      category: "Preventivo",
+      assetId: "AST-106",
+      assetName: "Portón Automatizado Heavy Duty Acceso Sur",
+      development: "Park Logistics Hub",
+      location: "Park Logistics Hub - Caseta 1",
+      assignedTech: "Téc. Juan Pérez",
+      assignedTechEmail: "tecnico@park.com",
+      assignedTechRole: "Mantenimiento Operativo",
+      createdDate: "2026-09-15T09:00:00",
+      dueDate: "2026-09-16T18:00:00",
+      completedDate: null,
+      estimatedHours: 2.5,
+      actualHours: 0.0,
+      checklist: [
+        { id: 1, text: "Inspeccionar estado de fotoceldas y reflectores infrarrojos.", completed: false, timestamp: null },
+        { id: 2, text: "Limpiar y engrasar cremallera y piñón de ataque.", completed: false, timestamp: null },
+        { id: 3, text: "Probar inversión de marcha anti-aplastamiento.", completed: false, timestamp: null }
+      ],
+      usedParts: [
+        { partId: "PRT-008", name: "Limpiador Dieléctrico de Contactos 500ml", qty: 1, unitCost: 18.50, totalCost: 18.50 }
+      ],
+      totalPartsCost: 18.50,
+      totalLaborCost: 125.00,
+      grandTotal: 143.50,
+      technicianNotes: "Prioridad operativa para flujo de camiones pesados.",
+      signatureData: null,
+      comments: []
     }
   ],
   inventory: [
@@ -336,7 +412,7 @@ export const initialData = {
       minStock: 4,
       unitCost: 120.00,
       unit: "Pieza",
-      supplier: "Eléctrica Industrial Favier",
+      supplier: "Eléctrica Industrial PlataformaPark",
       location: "Almacén Eléctrico - Gabinete 3"
     },
     {
@@ -418,7 +494,7 @@ export const initialData = {
       assetName: "Elevador Panorámico de Pasajeros #02",
       frequency: "Semanal",
       nextDueDate: "2026-08-03",
-      assignedTech: "Ing. Alejandro Silva",
+      assignedTech: "Téc. Juan Pérez",
       estimatedHours: 2.0,
       active: true
     },
@@ -435,9 +511,80 @@ export const initialData = {
     }
   ],
   technicians: [
-    { id: "TCH-01", name: "Ing. Carlos Mendoza", role: "Técnico Senior Eléctrico", email: "carlos.mendoza@grupofavier.com", phone: "+52 33 1122 3344", activeOrders: 2 },
-    { id: "TCH-02", name: "Téc. Roberto Gómez", role: "Especialista HVAC", email: "roberto.gomez@grupofavier.com", phone: "+52 33 2233 4455", activeOrders: 1 },
-    { id: "TCH-03", name: "Ing. Alejandro Silva", role: "Especialista Elevación Otis", email: "alejandro.silva@grupofavier.com", phone: "+52 33 3344 5566", activeOrders: 1 },
-    { id: "TCH-04", name: "Téc. Fernando Ruiz", role: "Técnico Electromecánico", email: "fernando.ruiz@grupofavier.com", phone: "+52 33 4455 6677", activeOrders: 1 }
+    { id: "TCH-01", name: "Ing. Carlos Mendoza", role: "Técnico Senior Eléctrico", email: "admin@park.com", phone: "+52 33 1122 3344", activeOrders: 2 },
+    { id: "TCH-02", name: "Téc. Roberto Gómez", role: "Especialista HVAC", email: "auditor@park.com", phone: "+52 33 2233 4455", activeOrders: 1 },
+    { id: "TCH-03", name: "Ing. Alejandro Silva", role: "Especialista Elevación Otis", email: "alejandro.silva@plataformapark.com", phone: "+52 33 3344 5566", activeOrders: 0 },
+    { id: "TCH-04", name: "Téc. Fernando Ruiz", role: "Técnico Electromecánico", email: "fernando.ruiz@plataformapark.com", phone: "+52 33 4455 6677", activeOrders: 1 },
+    { id: "TCH-05", name: "Téc. Juan Pérez", role: "Mantenimiento Operativo", email: "tecnico@park.com", phone: "+52 33 3800 3333", activeOrders: 2 }
+  ],
+  users: [
+    {
+      id: "u-dev-000",
+      fullName: "Ing. Desarrollador & QA",
+      email: "dev@park.com",
+      phone: "+52 (33) 3800-0001",
+      role: "developer",
+      department: "Ingeniería & DevOps",
+      status: "Activo",
+      lastLogin: "2026-09-01 10:00",
+      avatarUrl: ""
+    },
+    {
+      id: "u-admin-001",
+      fullName: "Ing. Carlos Mendoza",
+      email: "admin@park.com",
+      phone: "+52 (33) 3800-1111",
+      role: "admin",
+      department: "Dirección de Mantenimiento",
+      status: "Activo",
+      lastLogin: "2026-09-01 10:00",
+      avatarUrl: ""
+    },
+    {
+      id: "u-supervisor-002",
+      fullName: "Arq. Sofía Ramírez",
+      email: "supervisor@park.com",
+      phone: "+52 (33) 3800-2222",
+      role: "supervisor",
+      department: "Supervisión de Campo",
+      status: "Activo",
+      lastLogin: "2026-09-01 09:30",
+      avatarUrl: ""
+    },
+    {
+      id: "u-tecnico-003",
+      fullName: "Téc. Juan Pérez",
+      email: "tecnico@park.com",
+      phone: "+52 (33) 3800-3333",
+      role: "tecnico",
+      department: "Mantenimiento Operativo",
+      status: "Activo",
+      lastLogin: "2026-09-01 08:45",
+      avatarUrl: ""
+    },
+    {
+      id: "u-solicitante-004",
+      fullName: "Op. Maria López",
+      email: "solicitante@park.com",
+      phone: "+52 (33) 3800-4444",
+      role: "solicitante",
+      department: "Operaciones & Logística",
+      status: "Activo",
+      lastLogin: "2026-09-01 08:00",
+      avatarUrl: ""
+    },
+    {
+      id: "u-auditor-005",
+      fullName: "Lic. Roberto Gómez",
+      email: "auditor@park.com",
+      phone: "+52 (33) 3800-5555",
+      role: "auditor",
+      department: "Auditoría & Calidad",
+      status: "Activo",
+      lastLogin: "2026-09-01 07:30",
+      avatarUrl: ""
+    }
   ]
 };
+
+export const STORAGE_KEY = 'PARK_CMMS_DATA_CLEAN_V1';

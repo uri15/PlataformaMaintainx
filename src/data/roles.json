@@ -1,0 +1,251 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "meta": {
+    "system": "PLATAFORMA PARK CMMS",
+    "version": "1.0.0",
+    "description": "Especificación del control de acceso basado en roles (RBAC) para Frontend y Backend",
+    "updatedAt": "2026-08-06"
+  },
+  "modules": [
+    {
+      "id": "dashboard",
+      "name": "Dashboard Operativo",
+      "path": "/dashboard",
+      "icon": "📊",
+      "description": "Métricas de rendimiento (MTTR, MTBF, disponibilidad y costos)"
+    },
+    {
+      "id": "workOrders",
+      "name": "Órdenes de Trabajo",
+      "path": "/work-orders",
+      "icon": "📋",
+      "description": "Gestión, asignación y seguimiento de órdenes correctivas y preventivas"
+    },
+    {
+      "id": "assets",
+      "name": "Activos & Equipos",
+      "path": "/assets",
+      "icon": "⚙️",
+      "description": "Catálogo de infraestructura, maquinaria y ubicaciones técnicas"
+    },
+    {
+      "id": "preventive",
+      "name": "Mantenimiento Preventivo",
+      "path": "/preventive",
+      "icon": "📅",
+      "description": "Programación de rutinas, mantenimientos periódicos y calendarios"
+    },
+    {
+      "id": "inventory",
+      "name": "Repuestos e Inventario",
+      "path": "/inventory",
+      "icon": "📦",
+      "description": "Control de stock de refacciones, insumos y niveles mínimos"
+    },
+    {
+      "id": "reports",
+      "name": "Centro de Reportes PDF",
+      "path": "/reports",
+      "icon": "📄",
+      "description": "Generación y exportación de reportes ejecutivos e historial operativo"
+    },
+    {
+      "id": "audit",
+      "name": "Bitácora & Auditoría",
+      "path": "/audit",
+      "icon": "🛡️",
+      "description": "Trazabilidad inmutable de eventos, cambios de estado y registro de seguridad"
+    },
+    {
+      "id": "users",
+      "name": "Gestión de Usuarios",
+      "path": "/users",
+      "icon": "👥",
+      "description": "Administración de usuarios, asignación de roles y permisos"
+    },
+    {
+      "id": "settings",
+      "name": "Configuración del Sistema",
+      "path": "/settings",
+      "icon": "🛠️",
+      "description": "Parámetros globales del parque, datos corporativos e integraciones"
+    }
+  ],
+  "roles": {
+    "developer": {
+      "name": "Desarrollador / QA",
+      "description": "Acceso total al sistema, herramientas de depuración, simulación de roles y pruebas en vivo",
+      "hierarchyLevel": 0,
+      "defaultModule": "dashboard",
+      "modules": [
+        "dashboard",
+        "workOrders",
+        "assets",
+        "preventive",
+        "inventory",
+        "reports",
+        "audit",
+        "users",
+        "settings"
+      ],
+      "permissions": [
+        "create",
+        "read",
+        "update",
+        "delete",
+        "assign",
+        "approve",
+        "export",
+        "manage_users",
+        "configure_system",
+        "developer_mode"
+      ],
+      "routeProtection": {
+        "apiRoutes": ["/api/v1/*"],
+        "allowedMethods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+      }
+    },
+    "admin": {
+      "name": "Administrador del Sistema",
+      "description": "Acceso total a la configuración del sistema, gestión de usuarios y todos los módulos operativos",
+      "hierarchyLevel": 1,
+      "defaultModule": "dashboard",
+      "modules": [
+        "dashboard",
+        "workOrders",
+        "assets",
+        "preventive",
+        "inventory",
+        "reports",
+        "audit",
+        "users",
+        "settings"
+      ],
+      "permissions": [
+        "create",
+        "read",
+        "update",
+        "delete",
+        "assign",
+        "approve",
+        "export",
+        "manage_users",
+        "configure_system"
+      ],
+      "routeProtection": {
+        "apiRoutes": ["/api/v1/*"],
+        "allowedMethods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+      }
+    },
+    "supervisor": {
+      "name": "Supervisor de Mantenimiento",
+      "description": "Supervisión operativa, programación de mantenimientos, asignación de órdenes y control de inventario",
+      "hierarchyLevel": 2,
+      "defaultModule": "dashboard",
+      "modules": [
+        "dashboard",
+        "workOrders",
+        "assets",
+        "preventive",
+        "inventory",
+        "reports",
+        "audit"
+      ],
+      "permissions": [
+        "create",
+        "read",
+        "update",
+        "assign",
+        "approve",
+        "export"
+      ],
+      "routeProtection": {
+        "apiRoutes": [
+          "/api/v1/dashboard/*",
+          "/api/v1/work-orders/*",
+          "/api/v1/assets/*",
+          "/api/v1/preventive/*",
+          "/api/v1/inventory/*",
+          "/api/v1/reports/*"
+        ],
+        "allowedMethods": ["GET", "POST", "PUT", "PATCH"]
+      }
+    },
+    "tecnico": {
+      "name": "Técnico de Campo",
+      "description": "Ejecución de órdenes de trabajo asignadas, actualización de estados, firmas de recepción y consumo de repuestos",
+      "hierarchyLevel": 3,
+      "defaultModule": "workOrders",
+      "modules": [
+        "workOrders",
+        "assets",
+        "inventory"
+      ],
+      "permissions": [
+        "read",
+        "update_status",
+        "add_comments",
+        "sign_off",
+        "consume_inventory"
+      ],
+      "routeProtection": {
+        "apiRoutes": [
+          "/api/v1/work-orders/my-orders",
+          "/api/v1/work-orders/*/status",
+          "/api/v1/work-orders/*/comments",
+          "/api/v1/work-orders/*/signature",
+          "/api/v1/assets/read-only",
+          "/api/v1/inventory/consume"
+        ],
+        "allowedMethods": ["GET", "POST", "PATCH"]
+      }
+    },
+    "solicitante": {
+      "name": "Solicitante / Operador de Parque",
+      "description": "Creación de nuevas solicitudes de mantenimiento y consulta del estado de sus peticiones",
+      "hierarchyLevel": 4,
+      "defaultModule": "workOrders",
+      "modules": [
+        "workOrders"
+      ],
+      "permissions": [
+        "create_request",
+        "read_own"
+      ],
+      "routeProtection": {
+        "apiRoutes": [
+          "/api/v1/work-orders/create-request",
+          "/api/v1/work-orders/my-requests"
+        ],
+        "allowedMethods": ["GET", "POST"]
+      }
+    },
+    "auditor": {
+      "name": "Auditor / Gerente de Infraestructura",
+      "description": "Acceso de lectura y exportación de reportes para auditoría de cumplimiento e indicadores de desempeño",
+      "hierarchyLevel": 3,
+      "defaultModule": "dashboard",
+      "modules": [
+        "dashboard",
+        "workOrders",
+        "assets",
+        "reports",
+        "audit"
+      ],
+      "permissions": [
+        "read",
+        "export"
+      ],
+      "routeProtection": {
+        "apiRoutes": [
+          "/api/v1/dashboard/*",
+          "/api/v1/work-orders/*",
+          "/api/v1/assets/*",
+          "/api/v1/reports/*",
+          "/api/v1/audit/*"
+        ],
+        "allowedMethods": ["GET"]
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "plataforma-maintainx-cmms",
+  "version": "1.0.0",
+  "description": "PLATAFORMA PARK CMMS - Backend Express & Prototipo Frontend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "build": "node build.js --prod",
+    "build:dev": "node build.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^10.0.10",
+    "socket.io": "^4.8.3",
+    "socket.io-client": "^4.8.3"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  }
+}

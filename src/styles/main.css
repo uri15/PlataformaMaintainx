@@ -137,3 +137,20 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   border-radius: 8px;
   cursor: crosshair;
 }
+
+/* Emojis Monocromáticos ajustados al contraste y texto */
+.emoji-icon, .emoji-bw {
+  filter: grayscale(100%) contrast(140%);
+  opacity: 0.8;
+  display: inline-block;
+  transition: filter 0.2s ease, opacity 0.2s ease;
+}
+
+/* En botones y elementos activos con texto blanco o contraste oscuro */
+.text-white .emoji-icon,
+.text-white .emoji-bw,
+button.bg-\[\#0A3963\] .emoji-icon {
+  filter: grayscale(100%) brightness(250%) contrast(200%);
+  opacity: 0.95;
+}
+

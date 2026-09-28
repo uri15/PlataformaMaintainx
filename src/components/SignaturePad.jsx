@@ -1,16 +1,17 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React from 'react';
+import { Icon } from './Icon.jsx';
 
-export const SignaturePad = ({ onSaveSignature, initialSignature }) => {
-  const canvasRef = useRef(null);
-  const [isDrawing, setIsDrawing] = useState(false);
+export const SignaturePad = ({ onSaveSignature }) => {
+  const canvasRef = React.useRef(null);
+  const [isDrawing, setIsDrawing] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     ctx.lineWidth = 2.5;
     ctx.lineCap = 'round';
-    ctx.strokeStyle = '#D4AF37'; // Gold ink stroke
+    ctx.strokeStyle = '#0A3963';
   }, []);
 
   const startDrawing = (e) => {
@@ -57,17 +58,17 @@ export const SignaturePad = ({ onSaveSignature, initialSignature }) => {
   return (
     <div className="space-y-2">
       <div className="flex items-center justify-between text-xs">
-        <label className="font-bold text-slate-300">Firma Digital del Técnico / Supervisor</label>
+        <label className="font-bold text-slate-800">Firma Digital del Técnico / Supervisor</label>
         <button
           type="button"
           onClick={clearCanvas}
-          className="text-amber-400 hover:underline text-[11px] font-semibold"
+          className="text-[#0A3963] hover:underline text-[11px] font-bold"
         >
-          🧹 Limpiar Firma
+          <Icon name="clean" className="w-4 h-4 mr-1.5" /> Limpiar Firma
         </button>
       </div>
 
-      <div className="relative border border-amber-500/30 rounded-lg overflow-hidden bg-[#0B192C]">
+      <div className="relative border-2 dashed border-slate-300 rounded-lg overflow-hidden bg-white">
         <canvas
           ref={canvasRef}
           width={380}
@@ -80,10 +81,12 @@ export const SignaturePad = ({ onSaveSignature, initialSignature }) => {
           onTouchEnd={stopDrawing}
           onTouchMove={draw}
         />
-        <div className="absolute bottom-2 right-3 pointer-events-none text-[9px] text-slate-500 uppercase tracking-widest font-mono">
+        <div className="absolute bottom-2 right-3 pointer-events-none text-[9px] text-slate-400 uppercase tracking-widest font-mono font-bold">
           Plataforma PARK — Firma Digital
         </div>
       </div>
     </div>
   );
 };
+
+// Utilidad para comprimir y convertir imágenes a Base64 manteniendo alta resolución y tamaño ligero;
